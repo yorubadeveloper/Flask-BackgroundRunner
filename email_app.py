@@ -30,7 +30,7 @@ def send_email():
     return jsonify({"task_id": task_id})
 
 
-@app.route('/task_status/<int:task_id>')
+@app.route('/task_status/<task_id>')
 def task_status(task_id):
     status = background_runner.task_status(task_id)
     return jsonify({"status": status})
